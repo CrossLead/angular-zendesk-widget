@@ -31,7 +31,7 @@ var lintFiles = [
   'gulpfile.js',
   // Karma configuration
   'karma-*.conf.js'
-].concat(sourceFiles);
+]; // .concat(sourceFiles);
 
 gulp.task('build', function() {
   gulp.src(sourceFiles)

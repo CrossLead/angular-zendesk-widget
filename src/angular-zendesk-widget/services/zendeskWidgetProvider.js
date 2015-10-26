@@ -38,7 +38,7 @@
            * https://developer.zendesk.com/embeddables/docs/widget/api
            * @class ZendeskWidgetApi
            */
-          function ZendeskWidgetApi() {};
+          function ZendeskWidgetApi() {}
 
           angular.forEach(apiMethods, function(method) {
             ZendeskWidgetApi.prototype[method] = function() {
