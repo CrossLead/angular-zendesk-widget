@@ -1,0 +1,30 @@
+{
+  "generator-angularjs-library": {
+    "props": {
+      "author": {
+        "name": "McChrystal Group",
+        "email": "christian.yang@crosslead.com"
+      },
+      "libraryName": {
+        "original": "angular-zendesk-widget",
+        "camelized": "angularZendeskWidget",
+        "dasherized": "angular-zendesk-widget",
+        "slugified": "angular-zendesk-widget",
+        "parts": [
+          "angular",
+          "zendesk",
+          "widget"
+        ]
+      },
+      "includeModuleDirectives": true,
+      "includeModuleFilters": false,
+      "includeModuleServices": true,
+      "includeAngularModuleResource": false,
+      "includeAngularModuleCookies": false,
+      "includeAngularModuleSanitize": false,
+      "librarySrcDirectory": "src/angular-zendesk-widget",
+      "libraryUnitTestDirectory": "test/unit/angular-zendesk-widget",
+      "libraryUnitE2eDirectory": "test/e2e/angular-zendesk-widget"
+    }
+  }
+}
