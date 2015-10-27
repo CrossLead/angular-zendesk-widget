@@ -10,16 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai-jquery', 'jquery-1.8.3', 'sinon-chai'],
+    frameworks: ['jasmine'],
 
     plugins: [
-      'karma-mocha',
-      'karma-chai',
+      'karma-jasmine',
       'karma-sinon-chai',
-      'karma-chrome-launcher',
       'karma-phantomjs-launcher',
-      'karma-jquery',
-      'karma-chai-jquery',
       'karma-spec-reporter'
     ],
 
