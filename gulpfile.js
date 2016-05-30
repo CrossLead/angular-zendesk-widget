@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 var path = require('path');
 var plumber = require('gulp-plumber');
 var runSequence = require('run-sequence');
-var jshint = require('gulp-jshint');
+var eslint = require('gulp-eslint');
 
 /**
  * File patterns
@@ -47,7 +47,7 @@ gulp.task('build', function() {
  * Process
  */
 gulp.task('process-all', function (done) {
-  runSequence('jshint', 'test-src', 'build', done);
+  runSequence('lint', 'test-src', 'build', done);
 });
 
 /**
@@ -62,12 +62,23 @@ gulp.task('watch', function () {
 /**
  * Validate source JavaScript
  */
-gulp.task('jshint', function () {
+gulp.task('lint', function () {
   return gulp.src(lintFiles)
     .pipe(plumber())
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'));
+    .pipe(eslint({
+      extends: "eslint:recommended",
+      globals: {
+        angular: true,
+        module: true,
+        require: true,
+        __dirname: true,
+        document: true
+      }
+    }))
+    // Outputs the results to the console
+    .pipe(eslint.format())
+    // Exits the process with exit-code(1) if there were errors
+    .pipe(eslint.failAfterError());
 });
 
 /**
