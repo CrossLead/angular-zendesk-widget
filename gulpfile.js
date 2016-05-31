@@ -31,7 +31,7 @@ var lintFiles = [
   'gulpfile.js',
   // Karma configuration
   'karma-*.conf.js'
-]; // .concat(sourceFiles);
+].concat(sourceFiles);
 
 gulp.task('build', function() {
   gulp.src(sourceFiles)
@@ -66,7 +66,7 @@ gulp.task('lint', function () {
   return gulp.src(lintFiles)
     .pipe(plumber())
     .pipe(eslint({
-      extends: "eslint:recommended",
+      extends: 'eslint:recommended',
       globals: {
         angular: true,
         module: true,
