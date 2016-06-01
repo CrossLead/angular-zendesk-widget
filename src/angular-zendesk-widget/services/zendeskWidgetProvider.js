@@ -23,10 +23,10 @@
        * widget instantiated but before page load, such as hiding
        * the widget immediately. Receives the raw zE API object.
        * Callback does *not* need to wrap calls in a zE() closure.
-       * For more info, see: 
+       * For more info, see:
        * https://developer.zendesk.com/embeddables/docs/widget/api#ze.hide).
        */
-      this.init = function(opts) {
+      var init = this.init = function(opts) {
         angular.extend(settings, opts);
       };
 
@@ -39,6 +39,9 @@
            * @class ZendeskWidgetApi
            */
           function ZendeskWidgetApi() {}
+
+          ZendeskWidgetApi.prototype.injectZendeskScript = settings.__inject || angular.noop;
+          ZendeskWidgetApi.prototype.settings = init;
 
           angular.forEach(apiMethods, function(method) {
             ZendeskWidgetApi.prototype[method] = function() {
