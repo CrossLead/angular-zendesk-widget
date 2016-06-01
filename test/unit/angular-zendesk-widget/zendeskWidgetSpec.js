@@ -8,7 +8,7 @@ describe('Angular Zendesk Widget', function() {
       module('zendeskWidget');
       expect(function() {
         inject()
-      }).toThrow();
+      }).toThrowError('Missing accountUrl. Please set in app config via ZendeskWidgetProvider');
     });
 
   });

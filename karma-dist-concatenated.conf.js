@@ -17,7 +17,6 @@ module.exports = function(config) {
       'karma-chai',
       'karma-sinon-chai',
       'karma-chrome-launcher',
-      'karma-phantomjs-launcher',
       'karma-jquery',
       'karma-chai-jquery'
     ],
@@ -67,11 +66,25 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
+
+
+    // Use a custom launcher to run Chrome on TravisCI
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
   });
+
+  // Switch browser to Chrome if TravisCI is detected
+  if (process.env.TRAVIS) {
+    config.browsers = ['Chrome_travis_ci'];
+  }
 };
