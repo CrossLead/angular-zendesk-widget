@@ -5,6 +5,9 @@
     "name": "McChrystal Group",
     "email": "christian.yang@crosslead.com"
   },
+  "scripts": {
+    "test": "gulp process-all"
+  },
   "dependencies": {},
   "devDependencies": {
     "chai": "^1.9.1",
