@@ -10,13 +10,12 @@
         }
 
         var window = $window;
+
         // Following is essentially a copy paste of JS portion of the Zendesk embed code
         // with our settings subbed in. For more info, see:
         // https://support.zendesk.com/hc/en-us/articles/203908456-Using-Web-Widget-to-embed-customer-service-in-your-website
 
-        // Note that JSHint ignore is not working in latest release, so can't actually turn
-        // on JSHint yet. See https://github.com/jshint/jshint/issues/2411
-        /* jshint ignore:start */
+        /*eslint-disable */
 
         window.zEmbed || function(e, t) {
           var n, o, d, i, s, a = [],
@@ -35,7 +34,7 @@
           }, o.write('<body onload="document._l();">'), o.close()
         }("https://assets.zendesk.com/embeddable_framework/main.js", zendeskWidgetSettings.accountUrl);
 
-        /* jshint ignore:end */
+        /*eslint-enable */
 
         $window.zE(function() {
           zendeskWidgetSettings.beforePageLoad($window.zE);
