@@ -1,16 +1,11 @@
-'use strict';
+describe('zendeskWidget', function() {
+  'use strict';
 
-describe('Angular Zendesk Widget', function() {
+  beforeEach(module('zendeskWidget'));
 
-  describe('Module bootstrap', function() {
-
-    it('should throw if no accountUrl provided', function() {
-      module('zendeskWidget');
-      expect(function() {
-        inject()
-      }).toThrowError('Missing accountUrl. Please set in app config via ZendeskWidgetProvider');
-    });
-
+  it('throws an error when `accountUrl` is blank', function() {
+    expect(function() { inject() }).toThrowError(
+      'Missing accountUrl. Please set in app config via ZendeskWidgetProvider'
+    );
   });
-
 });
