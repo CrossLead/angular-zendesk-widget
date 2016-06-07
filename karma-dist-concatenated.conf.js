@@ -24,7 +24,7 @@ module.exports = function(config) {
       'bower/angular/angular.js',
       'bower/angular-mocks/angular-mocks.js',
       'dist/angular-zendesk-widget.js',
-      'test/unit/**/*.js'
+      'test/integration/**/*Spec.js'
     ],
 
 

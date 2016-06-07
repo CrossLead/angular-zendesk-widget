@@ -25,12 +25,13 @@ module.exports = function(config) {
       'bower/angular-mocks/angular-mocks.js',
       'src/**/*.module.js',
       'src/**/*.js',
-      'test/unit/**/*.js'
+      'test/unit/**/*Spec.js'
     ],
 
 
     // list of files to exclude
     exclude: [
+      'src/**/*.run.js'
     ],
 
 
