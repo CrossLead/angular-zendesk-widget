@@ -49,7 +49,7 @@ gulp.task('build', function() {
  * Process
  */
 gulp.task('process-all', function (done) {
-  runSequence('lint', 'test-src', 'build', done);
+  runSequence('lint', 'test-src', 'build', 'test-dist-concatenated', 'test-dist-minified', done);
 });
 
 /**
