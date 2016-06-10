@@ -19,12 +19,14 @@ var rootDirectory = path.resolve('./');
 var sourceDirectory = path.join(rootDirectory, './src');
 
 var sourceFiles = [
-
-  // Make sure module files are handled first
+  // Load angular module files first
   path.join(sourceDirectory, '/**/*.module.js'),
 
-  // Then add all JavaScript files
-  path.join(sourceDirectory, '/**/*.js')
+  // Next, add all angular services and providers
+  path.join(sourceDirectory, '/**/*.service.js'),
+
+  // Then the angular run files last
+  path.join(sourceDirectory, '/**/*.run.js')
 ];
 
 var lintFiles = [
@@ -47,7 +49,7 @@ gulp.task('build', function() {
  * Process
  */
 gulp.task('process-all', function (done) {
-  runSequence('lint', 'test-src', 'build', done);
+  runSequence('lint', 'test-src', 'build', 'test-dist-concatenated', 'test-dist-minified', done);
 });
 
 /**
