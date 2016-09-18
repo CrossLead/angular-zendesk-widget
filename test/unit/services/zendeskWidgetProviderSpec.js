@@ -12,8 +12,12 @@ describe('ZendeskWidgetProvider', function() {
   describe('a set of API methods', function() {
     beforeEach(function() {
       var apiMethods = ['setLocale', 'identify', 'hide', 'show', 'activate'];
-      mockService    = jasmine.createSpyObj('MockZendeskWebWidgetAPI', apiMethods);
-      $window.zE     = mockService;
+      // Stub out $window.zE() wrapper and all apiMethods
+      mockService = $window.zE = function(fn) { fn(); };
+      for (var apiMethod of apiMethods) {
+        $window.zE[apiMethod] = function() {};
+        spyOn($window.zE, apiMethod).and.callThrough();
+      }
     });
 
     it("delegates to Zendesk's Web Widget API", function() {
