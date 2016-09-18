@@ -14,7 +14,8 @@ describe('ZendeskWidgetProvider', function() {
       var apiMethods = ['setLocale', 'identify', 'hide', 'show', 'activate'];
       // Stub out $window.zE() wrapper and all apiMethods
       mockService = $window.zE = function(fn) { fn(); };
-      for (var apiMethod of apiMethods) {
+      for (var i = 0; i < apiMethods.length; i++) {
+        var apiMethod = apiMethods[i];
         $window.zE[apiMethod] = function() {};
         spyOn($window.zE, apiMethod).and.callThrough();
       }
