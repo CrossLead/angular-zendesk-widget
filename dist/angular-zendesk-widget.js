@@ -15,7 +15,8 @@
       'identify',
       'hide',
       'show',
-      'activate'
+      'activate',
+      'setHelpCenterSuggestions'
     ];
 
   angular.module('zendeskWidget')
