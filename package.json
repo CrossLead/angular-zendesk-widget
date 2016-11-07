@@ -1,6 +1,7 @@
 {
   "name": "angular-zendesk-widget",
   "version": "0.1.2",
+  "main": "dist/angular-zendesk-widget.js",
   "author": {
     "name": "CrossLead, Inc.",
     "email": "christian.yang@crosslead.com"
