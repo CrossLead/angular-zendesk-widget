@@ -1,5 +1,7 @@
 # angular-zendesk-widget [![Build Status](https://travis-ci.org/CrossLead/angular-zendesk-widget.svg?branch=master)](https://travis-ci.org/CrossLead/angular-zendesk-widget)
-Angular wrapper for the [Zendesk Web Widget](https://support.zendesk.com/hc/en-us/articles/203908456-Using-Web-Widget-to-embed-customer-service-in-your-website)
+Angular 1.x wrapper for the [Zendesk Web Widget](https://support.zendesk.com/hc/en-us/articles/203908456-Using-Web-Widget-to-embed-customer-service-in-your-website)
+
+For Angular 2/4+, please see https://github.com/AlisonVilela/ngx-zendesk-webwidget.
 
 ## Installation
 Via bower:
